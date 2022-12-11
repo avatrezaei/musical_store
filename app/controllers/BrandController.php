@@ -35,4 +35,34 @@ class BrandController extends \Core\Controller
             'rows' => $rows,
         ]);
     }
+
+    // delete
+    public function deleteAction()
+    {
+        $id = $_POST['id'];
+        $category = new Brand;
+        $category->delete($id);
+    }
+
+    // store
+    public function createAction()
+    {
+        // validate post fields
+        $validate = $this->validate([
+            'name' => 'required'
+        ]);
+
+        if (!$validate) {
+            return;
+        }
+
+        $brand = new Brand;
+        $brand->title = $_POST['name'];
+        $category->save();
+        
+        return $this->response([
+            'success' => true,
+            'message' => 'Brand created successfully',
+        ]);
+    }
 }

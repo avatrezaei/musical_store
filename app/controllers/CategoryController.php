@@ -36,4 +36,36 @@ class CategoryController extends \Core\Controller
             'rows' => $rows,
         ]);
     }
+
+    // delete
+    public function deleteAction()
+    {
+        $id = $_POST['id'];
+        $category = new Category;
+        $category->delete($id);
+    }
+
+    // store
+    public function createAction()
+    {
+        // validate post fields
+        $validate = $this->validate([
+            'name' => 'required',
+            'parent_id' => 'required',
+        ]);
+
+        if (!$validate) {
+            return;
+        }
+
+        $category = new Category;
+        $category->category = $_POST['name'];
+        $category->parent_id = $_POST['parent_id'];
+        $category->save();
+        
+        return $this->response([
+            'success' => true,
+            'message' => 'Category created successfully',
+        ]);
+    }
 }

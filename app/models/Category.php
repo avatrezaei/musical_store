@@ -6,10 +6,10 @@ use Core\Model;
 
 class Category extends Model
 {
-    protected $id;
-    protected $parent_id;
-    protected $category;
-    protected $image;
+    public $id;
+    public $parent_id;
+    public $category;
+    public $image;
 
     public function __construct() {
 		  $this->table = 'categories';
@@ -29,5 +29,14 @@ class Category extends Model
     public static function children($id) {
         $children = (new Category)->where(['parent_id'=>$id])->fetchAll();
         return $children;
+    } 
+
+    // save
+    public function save() {
+        $category = (new Category)->add([
+            'category' => $this->category,
+            'parent_id' => $this->parent_id ? $this->parent_id : 0,
+            'image' => "dress.svg",
+        ]);
     }
 }

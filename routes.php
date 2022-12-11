@@ -13,9 +13,25 @@ return [
 		'controller' => 'category',
 		'action' => 'index'
 	],
+	'/admin/categories/delete' => [
+		'controller' => 'category',
+		'action' => 'delete'
+	],
+	'/admin/categories/create' => [
+		'controller' => 'category',
+		'action' => 'create'
+	],
 	'/admin/brands' => [
 		'controller' => 'brand',
 		'action' => 'index'
+	],
+	'/admin/brands/delete' => [
+		'controller' => 'brand',
+		'action' => 'delete'
+	],
+	'/admin/brands/create' => [
+		'controller' => 'brand',
+		'action' => 'create'
 	],
 	'/admin/users' => [
 		'controller' => 'user',

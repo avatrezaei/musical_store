@@ -42,5 +42,55 @@ abstract class Controller
 	public function isAcl($key) {
 		return in_array($this->route['action'], $this->access[$key]);
 	}
+
+	// validate
+	public function validate($data) {
+		$rules = [
+			'required' => [
+				'pattern' => '/.+/',
+				'message' => 'This field is required',
+			],
+			'email' => [
+				'pattern' => '/^[\w.-]+@[\w.-]+\.[a-z]{2,6}$/i',
+				'message' => 'This field must be a valid email address',
+			],
+			'integer' => [
+				'pattern' => '/^[0-9]+$/',
+				'message' => 'This field must be an integer',
+			],
+			'float' => [
+				'pattern' => '/^[0-9]+[.,]?[0-9]*$/',
+				'message' => 'This field must be a float',
+			],
+			'phone' => [
+				'pattern' => '/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/',
+				'message' => 'This field must be a phone number',
+			],
+			'password' => [
+				'pattern' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/',
+				'message' => 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter and one number',
+			],
+		];
+		foreach ($data as $key => $value) {
+			if (isset($rules[$value])) {
+				if (!preg_match($rules[$value]['pattern'], $_POST[$key])) {
+					$this->view->message('error', $rules[$value]['message']);
+					return false;
+				}
+			}
+		}
+
+		return true;
+		
+	}
+
+
+
+	// response
+	public function response($data) {
+		header('Content-Type: application/json');
+		echo json_encode($data);
+		exit;
+	}
 	
 }
