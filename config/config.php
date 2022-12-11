@@ -8,6 +8,7 @@ define('APP_ROOT', dirname(dirname(__FILE__)));
 define('URL_ROOT', 'musical_store/');
 define('ADMIN_URL', URL_ROOT . 'admin/');
 define('URL_SUBFOLDER', '');
+define('SITE_FOLDER','musical_store');
 
 // database
 define('DB_SERVER', 'localhost');
@@ -17,6 +18,7 @@ define('DB_DATABASE', 'musical_store');
 define('DB_TIMEZONE', '+00:00');
 
 define('DEBUG_MODE', 1);
+
 
 
 ?>

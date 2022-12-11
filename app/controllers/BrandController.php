@@ -57,8 +57,8 @@ class BrandController extends \Core\Controller
         }
 
         $brand = new Brand;
-        $brand->title = $_POST['name'];
-        $category->save();
+        $brand->brand_title = $_POST['name'];
+        $brand->save();
         
         return $this->response([
             'success' => true,

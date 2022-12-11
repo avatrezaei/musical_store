@@ -23,7 +23,7 @@
 								</nav>
 							</div> 
 							<div class="col-md-6 col-sm-12 text-right">
-							<a href="#" class="btn btn-success" data-backdrop="static" data-toggle="modal" data-target="#create-brand-modal" type="button">
+							<a href="#" class="btn btn-success" data-backdrop="static" data-toggle="modal" data-target="#login-modal" type="button">
 									Create New
 								</a>
 							</div>
@@ -65,9 +65,12 @@
 		</div>
 	</div>
 
+	</div>
+
+
 	<div
 									class="modal fade"
-									id="create-brand-modal"
+									id="login-modal"
 									tabindex="-1"
 									role="dialog"
 									aria-labelledby="myLargeModalLabel"
@@ -101,28 +104,14 @@
 															class="form-control form-control-lg"
 															name = "name"
 															placeholder="name"
-															id="category-name"
+															id="brand-name"
 														/>
-													</div>
-													<!-- category parent -->
-													<div class="input-group">
-														<select
-															class="custom-select form-control form-control-lg"
-															name = "parent_id"
-															id="category-parent"
-														>
-															<option selected>Default</option>
-															{% for row in rows %}
-																<option value="{{row.id}}">{{row.name}}</option>
-															{% endfor %} 
-														</select>
-														
 													</div>
 													
 													<div class="row">
 														<div class="col-sm-12">
 															<div class="input-group mb-0">
-																<button class="btn btn-primary btn-lg btn-block" id="create-category-btn">Create</button>
+																<button type="default" class="btn btn-primary btn-lg btn-block" id="create-brand-btn">Create</button>
 															</div>
 															 
 														</div>
@@ -135,7 +124,7 @@
 
 
 
-</div>
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -158,16 +147,19 @@
 			});
 		});
 
-		$('#create-brand-btn').click(function(){
+		$('#create-brand-btn').click(function(event){
+			// ignore form submission
+			event.preventDefault();
 			var name = $('#brand-name').val();
 			var url = "brands/create";
 			$.ajax({
 				url: url,
 				type: 'POST',
-				data: {name:name, parent_id:parent},
+				data: {name:name},
 				success: function(data){
-					$('#create-brand-modal').modal('hide');
+					$('#login-modal').modal('hide');
 					location.reload();
+					return false;
 				}
 			});
 		});

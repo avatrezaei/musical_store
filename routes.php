@@ -41,6 +41,14 @@ return [
 		'controller' => 'product',
 		'action' => 'index'
 	],
+	'/admin/products/delete' => [
+		'controller' => 'product',
+		'action' => 'delete'
+	],
+	'/admin/products/create' => [
+		'controller' => 'product',
+		'action' => 'create'
+	],
 	'/admin/login' => [
 		'controller' => 'admin',
 		'action' => 'login'

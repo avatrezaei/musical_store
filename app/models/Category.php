@@ -7,6 +7,7 @@ use Core\Model;
 class Category extends Model
 {
     public $id;
+    public $level;
     public $parent_id;
     public $category;
     public $image;
@@ -33,7 +34,7 @@ class Category extends Model
 
     // save
     public function save() {
-        $category = (new Category)->add([
+        return (new Category)->add([
             'category' => $this->category,
             'parent_id' => $this->parent_id ? $this->parent_id : 0,
             'image' => "dress.svg",

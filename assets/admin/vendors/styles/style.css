@@ -5017,3 +5017,25 @@ body.IE .register-page-wrap .container {
         margin: 10px;
     }
 }
+
+.modal-box {
+    width: 100%;
+    padding: 40px 20px;
+    margin: 5px auto;
+}
+
+.modal-box .login-title {
+    padding: 0 0 10px;
+    margin-bottom: 30px
+}
+
+.modal-box .login-title h2 {
+    font-size: 24px;
+    font-weight: 700
+}
+
+.modal-box .login-img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100px
+}

@@ -17,7 +17,7 @@
       {% for banner in banners %}
       <div class="slider-item">
 
-        <img src="{{ 'assets/images/' ~ banner.image }}" alt="{{banner.title}}" class="banner-img">
+        <img src="{{ 'public/images/' ~ banner.image }}" alt="{{banner.title}}" class="banner-img">
 
         <div class="banner-content">
 
@@ -56,7 +56,7 @@
         <div class="category-item">
 
           <div class="category-img-box">
-            <img src=".{{ '/assets/images/icons/' ~ category.image }}" alt="ress & frock" width="30">
+            <img src=".{{ '/public/images/icons/' ~ category.image }}" alt="ress & frock" width="30">
           </div>
 
           <div class="category-content-box">
@@ -108,7 +108,7 @@
             <button class="sidebar-accordion-menu" data-accordion-btn>
 
               <div class="menu-title-flex">
-                <img src="./assets/images/icons/dress.svg" alt="clothes" width="20" height="20"
+                <img src="./public/images/icons/dress.svg" alt="clothes" width="20" height="20"
                   class="menu-title-img">
 
                 <p class="menu-title">{{subcats.category}}</p>
@@ -153,7 +153,7 @@
             <div class="showcase">
 
               <a href="#" class="showcase-img-box">
-                <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" width="75" height="75"
+                <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" width="75" height="75"
                   class="showcase-img">
               </a>
 
@@ -208,7 +208,7 @@
               <div class="showcase">
 
                 <a href="#" class="showcase-img-box">
-                  <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
+                  <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
                 </a>
 
                 <div class="showcase-content">
@@ -249,7 +249,7 @@
               <div class="showcase">
 
                 <a href="#" class="showcase-img-box">
-                  <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
+                  <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
                 </a>
 
                 <div class="showcase-content">
@@ -291,7 +291,7 @@
               <div class="showcase">
 
                 <a href="#" class="showcase-img-box">
-                  <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
+                  <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" width="70" class="showcase-img">
                 </a>
 
                 <div class="showcase-content">
@@ -337,7 +337,7 @@
             <div class="showcase">
               
               <div class="showcase-banner">
-                <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" class="showcase-img">
+                <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" class="showcase-img">
               </div>
 
               <div class="showcase-content">
@@ -442,8 +442,8 @@
 
                 <div class="showcase-banner">
 
-                  <img src="{{ 'assets/images/' ~ product.image1 }}" alt="{{product.title}}" width="300" class="product-img default">
-                  <img src="{{ 'assets/images/' ~ product.image2 }}" alt="{{product.title}}" width="300" class="product-img hover">
+                  <img src="{{ 'public/images/products/' ~ product.image1 }}" alt="{{product.title}}" width="300" class="product-img default">
+                  <img src="{{ 'public/images/products/' ~ product.image2 }}" alt="{{product.title}}" width="300" class="product-img hover">
 
                   {% if product.discount > 0 %}
                     <p class="showcase-badge">{{product.discount}}%</p>

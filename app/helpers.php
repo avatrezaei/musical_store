@@ -170,3 +170,13 @@ function selected($value, $selected): string
 
     return '';
 }
+
+
+function productImage($image): string
+{
+    if($image == null) {
+        return asset('public/images/no-image.png');
+    }
+
+    return asset('public/images/products/' . $image);
+}

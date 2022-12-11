@@ -90,7 +90,7 @@ class Sql
 
     public function delete($id)
     {
-        $sql = sprintf("delete from `%s` where `%s` = :%s", $this->table, $this->primary, $this->primary);
+        $sql = sprintf("delete from `%s` where `%s` = :%s;", $this->table, $this->primary, $this->primary);
         $sth = Db::pdo()->prepare($sql);
         $sth = $this->formatParam($sth, [$this->primary => $id]);
         $sth->execute();
@@ -105,8 +105,7 @@ class Sql
         $sth = $this->formatParam($sth, $data);
         $sth = $this->formatParam($sth, $this->param);
         $sth->execute();
-
-        return $sth->rowCount();
+        return Db::pdo()->lastInsertId();
     }
 
     public function update($data)

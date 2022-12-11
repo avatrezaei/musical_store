@@ -36,6 +36,18 @@
 			type="text/css"
 			href="vendors/styles/icon-font.min.css"
 		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/plugins/switchery/switchery.min.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css"
+		/>
 		
 		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
 
@@ -185,5 +197,8 @@
 		<script src="vendors/scripts/script.min.js"></script>
 		<script src="vendors/scripts/process.js"></script>
 		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="vendors/plugins/switchery/switchery.min.js"></script>
+		<script src="vendors/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+		<script src="vendors/scripts/advanced-components.js"></script>
 	</body>
 </html>
