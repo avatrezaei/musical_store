@@ -1,0 +1,13 @@
+{
+    "name": "mehrrostami/store",
+    "description": "Simple store for musical instrument retailer.",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "twig/twig": "~3.0"
+    }
+}
